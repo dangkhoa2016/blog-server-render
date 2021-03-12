@@ -1,0 +1,98 @@
+<section class="home-slider js-fullheight owl-carousel">
+    <div class="slider-item js-fullheight" style="{{{ ext_BgImage '/images/bg_2.jpg' }}}">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row no-gutters slider-text slider-text-2 js-fullheight align-items-center justify-content-center"
+                data-scrollax-parent="true">
+                <div class="col-md-10 text-center ftco-animate"
+                    data-scrollax='properties: { translateY: "70%" }'>
+                    <h1 class="mb-4" data-scrollax='properties: { translateY: "30%", opacity: 1.6 }'>Discover the Place</h1>
+                    <p data-scrollax='properties: { translateY: "30%", opacity: 1.6 }'>Find great places to stay, eat, shop, or visit from local experts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item js-fullheight" style="{{{ ext_BgImage '/images/bg_4.jpg' }}}">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row no-gutters slider-text slider-text-2 js-fullheight align-items-center justify-content-center"
+                data-scrollax-parent="true">
+                <div class="col-md-10 text-center ftco-animate"
+                    data-scrollax="properties: { translateY: '70%' }">
+                    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Technology</h1>
+                    <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">is best when it brings people together</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item js-fullheight" style="{{{ ext_BgImage '/images/bg_3.jpg' }}}">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row no-gutters slider-text slider-text-2 js-fullheight align-items-center justify-content-center"
+                data-scrollax-parent="true">
+                <div class="col-md-10 text-center ftco-animate"
+                    data-scrollax="properties: { translateY: '70%' }">
+                    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Explore and travel</h1>
+                    <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section" id="blogs-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                {{#if posts}}
+                <div class="row">
+                    {{#each posts}}
+                    <div class="col-md-12">
+                        <div class="blog-entry ftco-animate">
+                            <a href="{{../type}}/{{./slug}}" class="img img-2" style="{{{ ext_BgImage ./heroImage.url }}}"></a>
+                            <div class="text pt-2 mt-3">
+                                <span class="category mb-1 d-block"><a href="#">Technology</a></span>
+                                <h3 class="mb-4">
+                                    <a href="{{../type}}/{{./slug}}">{{./title}}</a>
+                                </h3>
+                                <p class="mb-4">{{#if ./description }}{{./description}}{{else}} {{ ./summary }}{{/if}}</p>
+                                <div class="author mb-4 d-flex align-items-center">
+                                    <a href="#" class="img" style="{{{ ext_BgImage '/images/person_1.jpg' }}}"></a>
+                                    <div class="ml-3 info">
+                                        <span>Written by</span>
+                                        <h3><a href="#">{{#if ./user}}{{./user.name}}{{else}}{{./author.name}}{{/if}}</a>, 
+                                        <span>{{#if ./publishDate }}{{formatShortDate ./publishDate}}{{else}}{{formatShortDate ./createdAt}}{{/if}}</span></h3>
+                                    </div>
+                                </div>
+                                <div class="meta-wrap d-md-flex align-items-center">
+                                    <div class="half order-md-last text-md-right">
+                                        <p class="meta">
+                                            <span><i class="icon-heart"></i> {{ ext_RandomCount }}</span>
+                                            <span><i class="icon-eye"></i> {{ ext_RandomCount }}</span>
+                                            <span><i class="icon-comment"></i> {{#if ./linkedFrom }}{{./linkedFrom.commentCollection.total}}{{else}}{{ ./comments.length }}{{/if}}</span>
+                                        </p>
+                                    </div>
+                                    <div class="half">
+                                        <p><a href="{{../type}}/{{./slug}}" class="btn btn-primary p-3 px-xl-4 py-xl-3">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{else}}
+                <div class="mb-5">
+                    <b>No posts found!</b>
+                </div>
+                {{/if}}
+
+                {{> paginate2}}
+            </div><!-- END-->
+
+            {{> rightbar}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+{{#if pages_info}}
+<div class="row mt-5">
+    <div class="col">
+        <div class="block-27">
+            <ul>
+                <li class="{{#ifCond pages_info.startPage pages_info.currentPage}}disabled{{/ifCond}}">
+                    <a class="" href="{{#ifCond pages_info.startPage pages_info.currentPage}}#{{else}}/{{./type}}?page_index={{calculate pages_info.currentPage '-' 1}}{{/ifCond}}"><i class="icon-arrow-left"></i></a>
+                </li>
+                {{#each pages_info.pages}}
+                <li class="{{#ifCond ../pages_info.currentPage .}} active{{/ifCond}}">
+                    <a class="" href="{{#ifCond ../pages_info.currentPage .}}#{{else}}/{{../type}}?page_index={{.}}{{/ifCond}}">{{.}}</a>
+                </li>
+                {{/each}}
+                <li class="{{#ifCond pages_info.endPage pages_info.currentPage}}disabled{{/ifCond}}">
+                    <a class="" href="{{#ifCond pages_info.endPage pages_info.currentPage}}#{{else}}/{{./type}}?page_index={{calculate pages_info.currentPage '+' 1}}{{/ifCond}}"><i class="icon-arrow-right"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/if}}

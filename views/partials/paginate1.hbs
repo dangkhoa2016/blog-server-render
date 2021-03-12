@@ -1,0 +1,19 @@
+{{#if pages_info}}
+<div class="row">
+    <div class="col">
+        <ul class="pagination">
+            <li class="page-item{{#ifCond pages_info.startPage pages_info.currentPage}} disabled{{/ifCond}}">
+                <a class="page-link" href="{{#ifCond pages_info.startPage pages_info.currentPage}}#{{else}}/{{./type}}?page_index={{calculate pages_info.currentPage '-' 1}}{{/ifCond}}">Prev</a>
+            </li>
+            {{#each pages_info.pages}}
+            <li class="page-item{{#ifCond ../pages_info.currentPage .}} active{{/ifCond}}">
+                <a class="page-link" href="{{#ifCond ../pages_info.currentPage .}}#{{else}}/{{../type}}?page_index={{.}}{{/ifCond}}">{{.}}</a>
+            </li>
+            {{/each}}
+            <li class="page-item{{#ifCond pages_info.endPage pages_info.currentPage}} disabled{{/ifCond}}">
+                <a class="page-link" href="{{#ifCond pages_info.endPage pages_info.currentPage}}#{{else}}/{{./type}}?page_index={{calculate pages_info.currentPage '+' 1}}{{/ifCond}}">Next</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{{/if}}

@@ -1,0 +1,93 @@
+
+{{#content 'style_block'}}
+  <style>
+    .post-body img {
+        max-width: 100%;
+    }
+  </style>
+{{/content}}
+
+<div class="hero-wrap js-fullheight" style="{{{ ext_BgImage '/images/bg_1.jpg' }}}" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="js-fullheight d-flex justify-content-center align-items-center">
+        <div class="col-md-8 text text-center">
+            <div class="desc">
+                <h1 class="mb-4">{{#if post }}{{post.title}}{{else}}Blog Details{{/if}}</h1>
+                <p>
+                    <a href="/" class="btn-custom mr-2">Home <span class="ion-ios-arrow-forward"></span></a>
+                    <a href="/{{type}}" class="btn-custom mr-2">Blog <span class="ion-ios-arrow-forward"></span></a>
+                    <span class="btn-custom">Post detail <span class="ion-ios-arrow-forward"></span></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            {{#if post }}
+            <div class="col-lg-8 ftco-animate post-body">
+
+                <div>{{#if post.description }}{{post.description}}{{else}} {{ post.summary }}{{/if}}</div>
+                <div>
+                {{#if post.content.text}}{{{post.content.text}}}{{else if post.content}}{{{post.content}}}{{/if}}
+                </div>
+                <div>{{#if post.description }}{{{body}}}{{/if}}</div>
+
+                <div class="tag-widget post-tag-container mb-5 mt-5">
+                    <div class="tagcloud">
+                        <a href="#" class="tag-cloud-link">Life</a>
+                        <a href="#" class="tag-cloud-link">Sport</a>
+                        <a href="#" class="tag-cloud-link">Tech</a>
+                        <a href="#" class="tag-cloud-link">Travel</a>
+                        {{#each post.tags}}
+                        <a href="#" class="tag-cloud-link">{{.}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="about-author d-flex p-4 bg-light">
+                    <div class="bio mr-5">
+                        <img src="/images/person_1.jpg" alt="Person placeholder" class="img-fluid mb-4">
+                    </div>
+                    <div class="desc">
+                        <h3>{{#if post.user }}{{post.user.name}}{{else}}{{post.author.name}}{{/if}}</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem
+                            necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa
+                            sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                    </div>
+                </div>
+
+                <div class="pt-5 mt-5">
+                    <h3 class="mb-5 font-weight-bold">{{comments.length}} Comments</h3>
+                    <ul class="comment-list">
+                        {{#each comments}}
+                        <li class="comment">
+                            <div class="vcard bio">
+                                <img src="/images/person_1.jpg" alt="Person placeholder">
+                            </div>
+                            <div class="comment-body">
+                                <h3>{{#if ./user }}{{./user.name}}{{else}}{{./author.name}}{{/if}}</h3>
+                                <div class="meta">{{#if ./sys}}{{formatDate ./sys.publishedAt 'llll'}}{{else}}{{formatDate ./createdAt 'llll'}}{{/if}}</div>
+                                <p>{{./comment}}</p>
+                                <p><a href="#" class="reply">Reply</a></p>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <!-- END comment-list -->
+
+                    {{> commentform}}
+                </div>
+            </div>
+            {{else}}
+            <div class="col-lg-8 ftco-animate">
+                <b>Post not found.</b>
+            </div>
+            {{/if}}
+
+            {{> rightbar}}
+        </div>
+    </div>
+</section>

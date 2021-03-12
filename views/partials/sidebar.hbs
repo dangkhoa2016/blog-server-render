@@ -1,0 +1,28 @@
+<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+    <h1 id="colorlib-logo"><a href="index.html">Khoa<span>.</span></a></h1>
+    <nav id="colorlib-main-menu" role="navigation">
+        <ul>
+            <li class="{{#if is_home_page}}colorlib-active{{/if}}"><a href="/">Home</a></li>
+            <li class="{{#if is_home_page}}{{else}}{{#match_url_and_menu url 'blogs_repl.html'}}colorlib-active{{/match_url_and_menu}}{{/if}}"><a href="/blogs_repl.html">Blogs Repl</a></li>
+            <li class="{{#if is_home_page}}{{else}}{{#match_url_and_menu url 'blogs_graphcms.html'}}colorlib-active{{/match_url_and_menu}}{{/if}}"><a href="/blogs_graphcms.html">Blogs GraphCMS</a></li>
+            <li class="{{#if is_home_page}}{{else}}{{#match_url_and_menu url 'blogs_contentful.html'}}colorlib-active{{/match_url_and_menu}}{{/if}}"><a href="/blogs_contentful.html">Blogs Contentful</a></li>
+            <li class="{{#if is_home_page}}{{else}}{{#match_url_and_menu url 'about.html'}}colorlib-active{{/match_url_and_menu}}{{/if}}"><a href="/about.html">About</a></li>
+            <li class="{{#if is_home_page}}{{else}}{{#match_url_and_menu url 'contact.html'}}colorlib-active{{/match_url_and_menu}}{{/if}}"><a href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="colorlib-footer">
+        <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
+            made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                target="_blank">Colorlib</a>
+        <ul>
+            <li><a href="#"><i class="icon-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-instagram"></i></a></li>
+            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+        </ul>
+    </div>
+</aside> <!-- END COLORLIB-ASIDE -->

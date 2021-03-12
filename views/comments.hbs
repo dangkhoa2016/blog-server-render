@@ -1,0 +1,64 @@
+
+{{#content 'style_block'}}
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://admin-lte-cdn.surge.sh/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://admin-lte-cdn.surge.sh/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://admin-lte-cdn.surge.sh/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+{{/content}}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h3 class="card-title">List Of Comments</h3>
+                    <div class="card-tools">
+                        <a class="btn btn-tool btn-warning" href="#" id="btn-reload"><i class="fas fa-sync"></i> Refresh</a>
+                        <a class="btn btn-tool btn-info" href="#" id="btn-add"><i class="fas fa-plus"></i> Add new</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Content</th>
+                                    <th>Post</th>
+                                    <th>User</th>
+                                    <th>Date</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Content</th>
+                                    <th>Post</th>
+                                    <th>User</th>
+                                    <th>Date</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#content 'scripts_block'}}
+
+  <!-- DataTables  & Plugins -->
+  <script src="https://admin-lte-cdn.surge.sh//plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="https://admin-lte-cdn.surge.sh//plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://admin-lte-cdn.surge.sh//plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="https://admin-lte-cdn.surge.sh//plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js" integrity="sha512-LW+1GKW2tt4kK180qby6ADJE0txk5/92P70Oh5YbtD7heFlC0qFFtacvSnHG4bNXmLnZq5hNb2V70r5DzS/U+g==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
+  <script src="/assets/comments.js"></script>
+{{/content}}
+

@@ -1,0 +1,23 @@
+{
+  "name": "blog-server-render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/dangkhoa2016/blog-server-render",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-handlebars-layouts": "^1.0.0",
+    "marked": "^2.0.0",
+    "moment": "^2.29.1"
+  }
+}
